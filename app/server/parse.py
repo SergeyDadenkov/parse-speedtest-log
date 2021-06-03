@@ -21,6 +21,7 @@ if __name__ == '__main__':
     with open(PATH_SPEEDTEST_LOG, 'w') as file_write:
         for line in lines:
             dict = eval(line.replace('false', 'False'))
+            # 123
             # print(f'timestamp: {dict["timestamp"]}, download.bandwidth: {dict["download"]["bandwidth"]}, upload.bandwidth: {dict["upload"]["bandwidth"]},'
             #       f'interface.internalIp: {dict["interface"]["internalIp"]}, interface.externalIp: {dict["interface"]["externalIp"]}, server.ip: {dict["server"]["ip"]}')
             QUERY = INSERT_SPEEDTEST.format(dict["timestamp"], dict["download"]["bandwidth"], dict["upload"]["bandwidth"], dict["interface"]["internalIp"], dict["interface"]["externalIp"], dict["server"]["ip"])
